@@ -79,7 +79,7 @@ nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
 .hero{min-height:690px;position:relative;overflow:hidden;color:#fff;background:#090806}
 .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,4,2,.95) 0%,rgba(8,6,3,.82) 36%,rgba(8,6,3,.2) 68%,rgba(8,6,3,.3) 100%)}
-.hero-bg{position:absolute;inset:0;background-image:url("https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1600/v1790601481/clizzbella_bg_fyagzr.jpg");background-size:cover;background-position:24% 24%}
+.hero-bg{position:absolute;inset:0;background-image:url("https://res.cloudinary.com/v0guckc2/image/upload/v1792668341/clizzbella_beaulty.jpg");background-size:cover;background-position:24% 24%}
 .hero-content{position:relative;z-index:2;min-height:690px;display:flex;align-items:center;gap:2%}
 .hero-copy{flex:0 0 51%;width:51%;padding-top:50px}
 .hero-showcase{flex:1;min-width:0;margin-top:46px}
@@ -224,6 +224,26 @@ section.standard{padding:70px 0}
 .results-pair{gap:10px}.booking-box{grid-template-columns:1fr;padding:20px}.full{grid-column:auto}
 .contact-panel h2{font-size:38px}.big-map{height:320px}
 .footergrid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}}
+
+/* Beauty video library — matches the existing black, cream and gold design */
+.video-library{background:#fff}
+.video-library .video-player-wrap{max-width:980px;margin:0 auto 28px;background:#0d0b08;border:1px solid rgba(205,175,54,.35);border-radius:18px;padding:12px;box-shadow:var(--shadow)}
+.video-library .video-player{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#17120d}
+.video-library .video-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-library .video-now{color:#fffdf8;padding:12px 5px 2px;font-weight:600}
+.video-library .video-now span{color:var(--gold);font-size:12px;display:block;text-transform:uppercase;letter-spacing:2px;margin-bottom:3px}
+.video-library .video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.video-library .video-card{display:flex;flex-direction:column;text-align:left;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;padding:0;color:var(--text)}
+.video-library .video-card:hover,.video-library .video-card:focus-visible{transform:translateY(-3px);border-color:var(--gold);box-shadow:var(--shadow)}
+.video-library .video-thumb{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#17120d,#40341a);color:var(--gold2);font-size:38px;position:relative}
+.video-library .video-thumb:after{content:"▶";position:absolute;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(205,175,54,.94);color:#100e08;font-size:20px;padding-left:4px;box-shadow:0 6px 24px #0004}
+.video-library .video-card-copy{padding:15px}
+.video-library .video-card-copy strong{font-family:"Playfair Display",serif;font-size:20px;line-height:1.2;display:block;margin-bottom:6px}
+.video-library .video-card-copy span{font-size:13px;color:var(--muted)}
+.video-library .video-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:850px){.video-library .video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.video-library .video-grid{grid-template-columns:1fr}.video-library .video-card-copy strong{font-size:19px}}
+
 </style>
 </head>
 <body class="is-loading">
@@ -247,6 +267,7 @@ section.standard{padding:70px 0}
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
+      <a href="#beauty-videos">Beauty Videos</a>
       <a href="#products">Products</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-gold" href="#booking">▣ &nbsp; Book Appointment</a>
@@ -377,6 +398,59 @@ section.standard{padding:70px 0}
   </div>
 </section>
 
+
+<section class="standard video-library" id="beauty-videos">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Beauty Tips & Inspiration</div>
+      <h2 class="section-title">Watch, Learn & <span class="gold-text">Glow</span></h2>
+      <p>Explore beauty tutorials and inspiration. Choose any video to play it here without leaving the Clizzbella website.</p>
+    </div>
+    <div class="video-player-wrap">
+      <div class="video-player">
+        <iframe id="beautyVideoPlayer"
+          src="https://www.youtube-nocookie.com/embed/Bscwg_cQzc4?rel=0"
+          title="Clizzbella beauty video player"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="video-now"><span>Now playing</span><div id="beautyVideoTitle">Clean, glowy makeup inspiration</div></div>
+    </div>
+    <div class="video-grid" aria-label="Beauty video tutorials">
+      <button class="video-card" type="button" data-video="Bscwg_cQzc4" data-title="Clean, glowy makeup inspiration">
+        <span class="video-thumb" aria-hidden="true">✦</span>
+        <span class="video-card-copy"><strong>Clean, Glowy Makeup</strong><span>Everyday beauty inspiration · Play here</span></span>
+      </button>
+      <button class="video-card" type="button" data-video="IKO1OVdtLFU" data-title="How to apply individual false eyelashes">
+        <span class="video-thumb" aria-hidden="true">♡</span>
+        <span class="video-card-copy"><strong>Lash Application Tips</strong><span>False-lash application tutorial · Play here</span></span>
+      </button>
+      <button class="video-card" type="button" data-video="aLHE2SqzI08" data-title="How to apply individual lashes">
+        <span class="video-thumb" aria-hidden="true">◈</span>
+        <span class="video-card-copy"><strong>Individual Lashes</strong><span>Lash technique inspiration · Play here</span></span>
+      </button>
+      <button class="video-card" type="button" data-video="Bscwg_cQzc4" data-title="Clean makeup look inspiration">
+        <span class="video-thumb" aria-hidden="true">✧</span>
+        <span class="video-card-copy"><strong>Fresh Everyday Look</strong><span>Soft, natural makeup ideas · Play here</span></span>
+      </button>
+      <button class="video-card" type="button" data-video="IKO1OVdtLFU" data-title="False eyelash placement and finishing">
+        <span class="video-thumb" aria-hidden="true">♛</span>
+        <span class="video-card-copy"><strong>Eye Beauty Inspiration</strong><span>Finishing touches for eye looks · Play here</span></span>
+      </button>
+      <button class="video-card" type="button" data-video="aLHE2SqzI08" data-title="Lash application techniques">
+        <span class="video-thumb" aria-hidden="true">❋</span>
+        <span class="video-card-copy"><strong>Lash Techniques</strong><span>More lash application inspiration · Play here</span></span>
+      </button>
+    </div>
+    <div class="video-actions">
+      <a class="btn btn-gold" href="#booking">Book a Beauty Appointment →</a>
+      <a class="btn" style="border:1px solid var(--gold);color:var(--text)" href="https://www.youtube.com/results?search_query=beauty+lash+brow+skincare+tutorials" target="_blank" rel="noopener noreferrer">Explore More on YouTube ↗</a>
+    </div>
+  </div>
+</section>
+
 <section class="standard" id="results">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Client Transformations</div><h2 class="section-title">Before <span class="gold-text">&amp; After</span></h2><p>See the difference a little Clizzbella care can make.</p></div>
@@ -450,7 +524,7 @@ section.standard{padding:70px 0}
   <div class="container">
     <div class="footergrid">
       <div><h3>Clizzbella Beauty Lounge</h3><p>Professional beauty services, semi-permanent makeup, lashes, brows, skincare and beauty products in Wuse 2, Abuja.</p></div>
-      <div><h3>Explore</h3><div class="footlinks"><a href="#services">Services</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#booking">Book Appointment</a></div></div>
+      <div><h3>Explore</h3><div class="footlinks"><a href="#services">Services</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#beauty-videos">Beauty Videos</a><a href="#booking">Book Appointment</a></div></div>
       <div><h3>Contact</h3>
         <div class="footlinks">
           <span>SF03, 2nd Floor, Olive Plaza, Wuse 2, Abuja</span>
@@ -579,6 +653,19 @@ if (sceneCanvas && window.THREE) { try {
 document.querySelectorAll('[data-service]').forEach(el => el.addEventListener('click', () => {
   document.querySelector('[name="service"]').value = el.dataset.service;
 }));
+
+
+// Beauty video cards: switch the embedded player without navigating away.
+document.querySelectorAll('.video-card[data-video]').forEach(card => {
+  card.addEventListener('click', () => {
+    const videoId = card.dataset.video;
+    const title = card.dataset.title || 'Beauty tutorial';
+    const player = document.getElementById('beautyVideoPlayer');
+    player.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0';
+    player.title = title;
+    document.getElementById('beautyVideoTitle').textContent = title;
+  });
+});
 
 // no past dates
 const dEl = document.querySelector('[name="date"]'), nowD = new Date();
