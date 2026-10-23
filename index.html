@@ -9,6 +9,8 @@
 <!-- TODO: replace YOUR-DOMAIN below once the site is live -->
 <link rel="canonical" href="https://YOUR-DOMAIN/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Clizzbella Beauty Lounge">
+<meta property="og:locale" content="en_NG">
 <meta property="og:title" content="Clizzbella Beauty Lounge | Wuse 2, Abuja">
 <meta property="og:description" content="Lashes, brows, semi-permanent makeup, skincare and nails in Wuse 2, Abuja.">
 <meta property="og:image" content="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1200,h_630,c_fill/v1790601481/clizzbella_bg_fyagzr.jpg">
@@ -16,10 +18,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/leelnqfq/image/upload/v1790597607/clizzbella-192x192_fcjhap.png">
 <link rel="apple-touch-icon" href="https://res.cloudinary.com/leelnqfq/image/upload/v1790597607/clizzbella-192x192_fcjhap.png">
-<link rel="preload" as="image" fetchpriority="high" href="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1600/v1790601481/clizzbella_bg_fyagzr.jpg">
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload now matches the image the hero actually uses (it previously preloaded a different file) -->
+<link rel="preload" as="image" fetchpriority="high" href="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792668341/clizzbella_beaulty.jpg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<script>try{if(sessionStorage.getItem('clz')==='1')document.documentElement.className='seen'}catch(e){}</script>
+<noscript><style>.preloader{display:none}body.is-loading{overflow:auto}</style></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BeautySalon","name":"Clizzbella Beauty Lounge",
 "image":"https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1200/v1790601481/clizzbella_bg_fyagzr.jpg",
@@ -29,16 +35,18 @@
 "sameAs":["https://instagram.com/YOUR_INSTAGRAM_HANDLE","https://tiktok.com/@YOUR_TIKTOK_HANDLE","https://facebook.com/YOUR_FACEBOOK_PAGE"]}
 </script>
 <style>
-
 :root{--black:#0d0b08;--black2:#17120d;--gold:#cdaf36;--gold2:#e4c65b;--cream:#fffdf8;--soft:#f7f4ed;--text:#17130f;--muted:#68635b;--line:#e8e1d2;--white:#fff;--shadow:0 18px 55px rgba(25,18,8,.12)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:"DM Sans",sans-serif;color:var(--text);background:var(--cream);line-height:1.55}
+body{font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:var(--cream);line-height:1.55}
 a{text-decoration:none;color:inherit}
 img{display:block;width:100%;object-fit:cover}
 button,input,select,textarea{font:inherit}
 .container{width:min(1380px,92%);margin:auto}
 body.is-loading{overflow:hidden}
+.seen .preloader{display:none}.seen body.is-loading{overflow:auto}
+.skip{position:absolute;left:-999px;top:0;z-index:10000;background:var(--gold);color:#090805;padding:10px 16px;border-radius:0 0 10px 0;font-weight:700}
+.skip:focus{left:0}
 .preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;color:#fffdf8;background:radial-gradient(ellipse at 50% 38%,rgba(15,70,52,.5),transparent 42%),linear-gradient(145deg,#080a08,#10130f 58%,#070806);opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease}
 .preloader:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;background:repeating-linear-gradient(135deg,transparent 0 72px,rgba(205,175,54,.08) 73px,transparent 74px 146px)}
 .preloader.is-dismissed{opacity:0;visibility:hidden;pointer-events:none}
@@ -48,9 +56,9 @@ body.is-loading{overflow:hidden}
 .preloader-rings{inset:0;border-top-color:var(--gold2);border-left-color:rgba(228,198,91,.12);animation:loader-spin 12s linear infinite}
 .preloader-rings:before{inset:12px;border-right-color:var(--gold2);border-bottom-color:rgba(228,198,91,.12);animation:loader-spin 9s linear infinite reverse}
 .preloader-rings:after{inset:27px;border-top-color:rgba(228,198,91,.12);border-bottom-color:var(--gold);animation:loader-spin 16s linear infinite}
-.preloader-monogram{width:86px;aspect-ratio:1;display:grid;place-items:center;border:1px solid rgba(228,198,91,.7);border-radius:50%;color:var(--gold2);font-family:"Playfair Display",serif;font-size:57px;line-height:1;box-shadow:0 0 38px rgba(205,175,54,.12),inset 0 0 26px rgba(205,175,54,.08)}
+.preloader-monogram{width:86px;aspect-ratio:1;display:grid;place-items:center;border:1px solid rgba(228,198,91,.7);border-radius:50%;color:var(--gold2);font-family:"Playfair Display",Georgia,serif;font-size:57px;line-height:1;box-shadow:0 0 38px rgba(205,175,54,.12),inset 0 0 26px rgba(205,175,54,.08)}
 .preloader-kicker{margin-bottom:8px;color:var(--gold2);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:3px}
-.preloader-name{font-family:"Playfair Display",serif;font-size:30px;line-height:1.15}
+.preloader-name{font-family:"Playfair Display",Georgia,serif;font-size:30px;line-height:1.15}
 .preloader-subtitle{margin-top:6px;color:rgba(255,253,248,.65);font-size:10px;text-transform:uppercase;letter-spacing:4px}
 .preloader-track{width:176px;height:2px;margin:27px auto 12px;overflow:hidden;background:rgba(255,255,255,.12)}
 .preloader-track span{display:block;width:42%;height:100%;background:linear-gradient(90deg,transparent,var(--gold2),transparent);animation:loader-sweep 1.5s ease-in-out infinite}
@@ -58,19 +66,19 @@ body.is-loading{overflow:hidden}
 @keyframes loader-spin{to{transform:rotate(360deg)}}
 @keyframes loader-sweep{from{transform:translateX(-110%)}to{transform:translateX(250%)}}
 @keyframes loader-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.preloader-content{animation:none}.preloader-rings,.preloader-rings:before,.preloader-rings:after,.preloader-track span{animation:none}.preloader-track span{width:100%}.preloader{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.preloader-content{animation:none}.preloader-rings,.preloader-rings:before,.preloader-rings:after,.preloader-track span{animation:none}.preloader-track span{width:100%}.preloader{transition:none}}
 nav{position:fixed;left:0;right:0;top:0;z-index:50;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.58),transparent);transition:background .3s}
-nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
+nav.scrolled{background:rgba(13,11,8,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .navin{height:92px;display:flex;align-items:center;justify-content:space-between;gap:30px}
 .logo{display:flex;align-items:center;gap:12px;color:#fff}
-.logo-text{font-family:"Playfair Display",serif;font-size:25px;line-height:1}
-.logo-text small{display:block;text-align:center;font-family:"DM Sans",sans-serif;font-size:10px;letter-spacing:4px;color:var(--gold);margin-top:4px}
+.logo-text{font-family:"Playfair Display",Georgia,serif;font-size:25px;line-height:1}
+.logo-text small{display:block;text-align:center;font-family:"DM Sans",system-ui,sans-serif;font-size:10px;letter-spacing:4px;color:var(--gold);margin-top:4px}
 .navlinks{display:flex;align-items:center;gap:29px;font-size:14px;font-weight:600}
 .navlinks a{position:relative;padding:10px 0}
 .navlinks a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold);transform:scaleX(0);transition:.25s}
 .navlinks a:hover:after,.navlinks a.active:after{transform:scaleX(1)}
 .navlinks a.btn:after{display:none}
-.menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+.menu{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 25px;border-radius:13px;font-weight:700;font-size:14px;border:1px solid transparent;transition:.25s;cursor:pointer}
 .btn-gold{background:linear-gradient(135deg,#d8bb48,#c69f27);color:#090805;box-shadow:0 9px 24px rgba(205,175,54,.2)}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 13px 30px rgba(205,175,54,.3)}
@@ -79,7 +87,7 @@ nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
 .hero{min-height:690px;position:relative;overflow:hidden;color:#fff;background:#090806}
 .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,4,2,.95) 0%,rgba(8,6,3,.82) 36%,rgba(8,6,3,.2) 68%,rgba(8,6,3,.3) 100%)}
-.hero-bg{position:absolute;inset:0;background-image:url("https://res.cloudinary.com/v0guckc2/image/upload/v1792668341/clizzbella_beaulty.jpg");background-size:cover;background-position:24% 24%}
+.hero-bg{position:absolute;inset:0;background-image:url("https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792668341/clizzbella_beaulty.jpg");background-size:cover;background-position:24% 24%}
 .hero-content{position:relative;z-index:2;min-height:690px;display:flex;align-items:center;gap:2%}
 .hero-copy{flex:0 0 51%;width:51%;padding-top:50px}
 .hero-showcase{flex:1;min-width:0;margin-top:46px}
@@ -91,7 +99,7 @@ nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
 .hero-service-list a:hover{color:var(--gold2);border-color:var(--gold)}
 .hero-service-list span{color:var(--gold);font-size:10px;font-weight:700}
 .eyebrow{text-transform:uppercase;letter-spacing:6px;color:var(--gold);font-size:12px;font-weight:700;margin-bottom:16px}
-.hero h1{font-family:"Playfair Display",serif;font-size:clamp(52px,6.2vw,84px);line-height:.98;letter-spacing:-2px;max-width:760px}
+.hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(52px,6.2vw,84px);line-height:.98;letter-spacing:-2px;max-width:760px}
 .hero h1 span{color:var(--gold)}
 .hero p{font-size:17px;max-width:640px;margin:24px 0;color:#f0ede7}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -101,7 +109,7 @@ nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
 .services-wrap{padding:26px 0 0;background:#fff}
 .services-layout{display:grid;grid-template-columns:1.05fr 1.65fr .92fr;gap:28px;align-items:stretch}
 .service-intro{padding:28px 0 20px}
-.service-intro h2,.section-title{font-family:"Playfair Display",serif;font-size:clamp(36px,4vw,53px);line-height:1.05}
+.service-intro h2,.section-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(36px,4vw,53px);line-height:1.05}
 .service-intro h2 span{color:var(--gold)}
 .service-intro p{color:var(--muted);margin:20px 0 26px;max-width:430px}
 .gold-line{width:58px;height:4px;background:var(--gold);margin:18px 0 20px;border-radius:5px}
@@ -114,7 +122,7 @@ nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
 .service-card-label b{width:24px;height:24px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
 .location-card{background:#fbf8f0;border-radius:18px;padding:24px 24px 18px;box-shadow:var(--shadow);margin-bottom:20px}
 .location-card .eyebrow{letter-spacing:4px;font-size:11px}
-.location-card h3{font-family:"Playfair Display",serif;font-size:31px;line-height:1.05}
+.location-card h3{font-family:"Playfair Display",Georgia,serif;font-size:31px;line-height:1.05}
 .contact-list{display:grid;gap:13px;margin:20px 0}
 .contact-item{display:flex;gap:13px;align-items:flex-start}
 .contact-icon{font-size:22px;color:var(--gold);width:25px}
@@ -127,7 +135,7 @@ nav.scrolled{background:rgba(13,11,8,.94);backdrop-filter:blur(10px)}
 .stat{display:flex;align-items:center;justify-content:center;gap:15px;border-right:1px solid rgba(205,175,54,.22);padding:4px 20px}
 .stat:last-child{border:0}
 .stat-icon{font-size:32px;color:var(--gold)}
-.stat strong{display:block;font-family:"Playfair Display",serif;font-size:26px}
+.stat strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:26px}
 .stat span{display:block;font-size:12px;color:#ddd6c8}
 section.standard{padding:95px 0}
 .section-head{text-align:center;max-width:760px;margin:0 auto 48px}
@@ -143,25 +151,30 @@ section.standard{padding:95px 0}
 .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .benefit{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:26px 20px;text-align:center;box-shadow:0 8px 20px rgba(18,13,8,.03)}
 .benefit-icon{width:58px;height:58px;border-radius:50%;background:rgba(205,175,54,.12);color:var(--gold);display:grid;place-items:center;margin:0 auto 18px;font-size:24px}
-.benefit h3{font-family:"Playfair Display",serif;font-size:23px;margin-bottom:8px}
+.benefit h3{font-family:"Playfair Display",Georgia,serif;font-size:23px;margin-bottom:8px}
 .benefit p{font-size:14px;color:var(--muted)}
 .testimonials{background:#f8f4ee}
 .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .testimonial-card{background:#fff;border-radius:18px;padding:24px;border:1px solid var(--line);box-shadow:0 10px 24px rgba(18,13,8,.04)}
-.quote-mark{font-size:36px;color:var(--gold);line-height:1;font-family:"Playfair Display",serif;margin-bottom:10px}
+.quote-mark{font-size:36px;color:var(--gold);line-height:1;font-family:"Playfair Display",Georgia,serif;margin-bottom:10px}
 .testimonial-card p{color:var(--muted);margin-bottom:18px}
 .person{display:flex;align-items:center;gap:12px}
 .person-badge{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#d9bc54,#b88f1b);color:#fff;display:grid;place-items:center;font-weight:700}
 .person strong{display:block;font-size:14px}
 .person span{font-size:12px;color:var(--muted)}
 .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:250px 250px;gap:12px}
-.gallery img{height:100%;border-radius:15px}
+.gallery img{height:100%;border-radius:15px;cursor:zoom-in}
+.image-zoom{width:min(94vw,1200px);max-width:none;max-height:92vh;padding:0;border:0;border-radius:12px;background:#111;overflow:visible}
+.image-zoom::backdrop{background:rgba(0,0,0,.88)}
+.image-zoom img{display:block;max-width:94vw;max-height:88vh;margin:auto;object-fit:contain;border-radius:12px}
+.image-zoom figcaption{padding:10px 16px;color:#fff;text-align:center;font-size:14px}
+.image-zoom-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;font-size:26px;line-height:1;cursor:pointer}
 .gallery img:first-child{grid-row:1/3}
 .gallery img:last-child{grid-column:2/4}
 .results-pair{max-width:850px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .result-card{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
 .result-photo{aspect-ratio:4/3;width:100%;display:block;border-radius:14px;object-fit:cover}
-.result-label{position:absolute;left:14px;bottom:14px;background:rgba(11,9,7,.7);color:#fff;border:1px solid rgba(255,255,255,.1);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1px}
+.result-label{position:absolute;z-index:1;left:14px;bottom:14px;background:rgba(11,9,7,.7);color:#fff;border:1px solid rgba(255,255,255,.1);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1px}
 .result-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,7,.22) 100%)}
 .booking{background:var(--black);color:#fff}
 .booking .section-head p{color:#cfc8bb}
@@ -173,11 +186,11 @@ section.standard{padding:95px 0}
 .contact-section{padding:80px 0;background:#fff}
 .contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:stretch}
 .contact-panel{background:#fbf8f0;border-radius:20px;padding:35px}
-.contact-panel h2{font-family:"Playfair Display",serif;font-size:45px;line-height:1.05}
+.contact-panel h2{font-family:"Playfair Display",Georgia,serif;font-size:45px;line-height:1.05}
 .big-map{height:430px;width:100%;border:0;border-radius:20px;box-shadow:var(--shadow)}
 footer{background:#080705;color:#ddd4c3;padding:55px 0 22px}
 .footergrid{display:grid;grid-template-columns:1.4fr .8fr .9fr;gap:45px}
-footer h3{font-family:"Playfair Display",serif;color:#fff;font-size:25px;margin-bottom:14px}
+footer h3{font-family:"Playfair Display",Georgia,serif;color:#fff;font-size:25px;margin-bottom:14px}
 footer p,footer a,footer span{font-size:13px;color:#aaa294}
 .copyright a{color:#e54848;font-weight:700;text-decoration:underline;text-decoration-color:rgba(229,72,72,.5);text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
 .copyright a:hover,.copyright a:focus-visible{color:#fff;text-decoration-color:#e54848}
@@ -225,7 +238,7 @@ section.standard{padding:70px 0}
 .contact-panel h2{font-size:38px}.big-map{height:320px}
 .footergrid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}}
 
-/* Beauty video library — matches the existing black, cream and gold design */
+/* Beauty video library */
 .video-library{background:#fff}
 .video-library .video-player-wrap{max-width:980px;margin:0 auto 28px;background:#0d0b08;border:1px solid rgba(205,175,54,.35);border-radius:18px;padding:12px;box-shadow:var(--shadow)}
 .video-library .video-player{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#17120d}
@@ -238,15 +251,16 @@ section.standard{padding:70px 0}
 .video-library .video-thumb{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#17120d,#40341a);color:var(--gold2);font-size:38px;position:relative}
 .video-library .video-thumb:after{content:"▶";position:absolute;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(205,175,54,.94);color:#100e08;font-size:20px;padding-left:4px;box-shadow:0 6px 24px #0004}
 .video-library .video-card-copy{padding:15px}
-.video-library .video-card-copy strong{font-family:"Playfair Display",serif;font-size:20px;line-height:1.2;display:block;margin-bottom:6px}
+.video-library .video-card-copy strong{font-family:"Playfair Display",Georgia,serif;font-size:20px;line-height:1.2;display:block;margin-bottom:6px}
 .video-library .video-card-copy span{font-size:13px;color:var(--muted)}
 .video-library .video-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn-line{border:1px solid var(--gold);color:var(--text)}
 @media(max-width:850px){.video-library .video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.video-library .video-grid{grid-template-columns:1fr}.video-library .video-card-copy strong{font-size:19px}}
-
 </style>
 </head>
 <body class="is-loading">
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Clizzbella Beauty Lounge">
   <div class="preloader-content">
@@ -272,11 +286,11 @@ section.standard{padding:70px 0}
       <a href="#contact">Contact</a>
       <a class="btn btn-gold" href="#booking">▣ &nbsp; Book Appointment</a>
     </div>
-    <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+    <button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">☰</button>
   </div>
 </nav>
 
-<main>
+<main id="main">
 
 <section class="hero" id="home">
   <div class="hero-bg"></div>
@@ -290,10 +304,10 @@ section.standard{padding:70px 0}
         <a class="btn btn-outline" href="https://wa.me/2348164592884?text=Hello%20Clizzbella%20Beauty%20Lounge%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer">◉ &nbsp; Chat on WhatsApp</a>
       </div>
       <div class="hero-features">
-        <div class="feature"><span class="feature-icon">◆</span> Professional Services</div>
-        <div class="feature"><span class="feature-icon">◈</span> Quality Products</div>
-        <div class="feature"><span class="feature-icon">♛</span> Experienced Beauty Experts</div>
-        <div class="feature"><span class="feature-icon">♥</span> Clean &amp; Comfortable</div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">◆</span> Professional Services</div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">◈</span> Quality Products</div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">♛</span> Experienced Beauty Experts</div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">♥</span> Clean &amp; Comfortable</div>
       </div>
     </div>
     <div class="hero-showcase" aria-label="Clizzbella beauty services">
@@ -301,11 +315,13 @@ section.standard{padding:70px 0}
       <p class="hero-showcase-title">Explore our services</p>
       <div class="hero-service-list">
         <a href="#booking" data-service="Lash Extensions"><span>01</span> Lash Extensions</a>
-        <a href="#booking" data-service="Brow Shaping &amp; Tinting"><span>02</span> Brow Shaping &amp; Tinting</a>
-        <a href="#booking" data-service="Semi-Permanent Makeup"><span>03</span> Semi-Permanent Makeup</a>
-        <a href="#booking" data-service="Facial Skincare"><span>04</span> Facial Skincare</a>
+        <a href="#booking" data-service="Brow Lamination &amp; Tinting"><span>02</span> Brow Lamination &amp; Tinting</a>
+        <a href="#booking" data-service="Makeup"><span>03</span> Makeup</a>
+        <a href="#booking" data-service="Microblading (PMU Brows)"><span>04</span> Microblading (PMU Brows)</a>
         <a href="#booking" data-service="Nails Services"><span>05</span> Nails Services</a>
-        <a href="#booking" data-service="Beauty Products"><span>06</span> Beauty Products</a>
+        <a href="#booking" data-service="Beauty Products"><span>06</span> Spa Beds/Stools/Lights/Trolleys</a>
+        <a href="#booking" data-service="Beauty Products"><span>07</span> SPMU/Lash Products</a>
+        <a href="#booking" data-service="Nano Brows"><span>08</span> Nano Brows</a>
       </div>
     </div>
   </div>
@@ -317,46 +333,46 @@ section.standard{padding:70px 0}
       <div class="eyebrow">Our Services</div>
       <h2>Beauty Services Tailored <span>For You</span></h2>
       <div class="gold-line"></div>
-      <p>From lashes and brows to semi-permanent makeup, skincare, nails and more — we provide professional beauty services using high-quality products in a relaxing and comfortable environment.</p>
+      <p>From lashes and brows to makeup, skincare, nails and more — we provide professional beauty services using high-quality products in a relaxing and comfortable environment.</p>
       <a class="btn btn-gold" href="#booking">View All Services &nbsp; →</a>
     </div>
     <div class="service-grid">
-      <a class="service-card" href="#booking" data-service="Lash Extensions"><img loading="lazy" src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_800/v1790601481/clizzbella_lash_cryu3h.jpg" alt="Lash extensions"><div class="service-card-label">Lash Extensions <b>→</b></div></a>
-      <a class="service-card" href="#booking" data-service="Brow Shaping &amp; Tinting"><img loading="lazy" src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_800/v1790601035/brow_h2nbmf.jpg" alt="Brows"><div class="service-card-label">Brow Shaping &amp; Tinting <b>→</b></div></a>
-      <a class="service-card" href="#booking" data-service="Semi-Permanent Makeup"><img loading="lazy" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=85" alt="Semi permanent makeup"><div class="service-card-label">Semi-Permanent Makeup <b>→</b></div></a>
-      <a class="service-card" href="#booking" data-service="Facial Skincare"><img loading="lazy" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85" alt="Facial skincare"><div class="service-card-label">Facial Skincare <b>→</b></div></a>
-      <a class="service-card" href="#booking" data-service="Nails Services"><img loading="lazy" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=85" alt="Nails service"><div class="service-card-label">Nails Services <b>→</b></div></a>
-      <a class="service-card" id="products" href="#booking" data-service="Beauty Products"><img loading="lazy" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=85" alt="Beauty products"><div class="service-card-label">Beauty Products <b>→</b></div></a>
+      <a class="service-card" href="#booking" data-service="Lash Extensions"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_500/v1792730797/LASH_EXTENSION.jpg" alt="Lash extensions"><div class="service-card-label">LASH EXTENSIONS<b aria-hidden="true">→</b></div></a>
+      <a class="service-card" href="#booking" data-service="Brow Lamination &amp; Tinting"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_500/v1792730798/LAMINATION_and_TINT.jpg" alt="Brow lamination and tinting"><div class="service-card-label">LAMINATION &amp; TINTING <b aria-hidden="true">→</b></div></a>
+      <a class="service-card" href="#booking" data-service="Ombré Brows"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_500/v1792731182/OMBR%C3%89_BROWS.jpg" alt="Ombré brows"><div class="service-card-label">OMBRÉ BROWS <b aria-hidden="true">→</b></div></a>
+      <a class="service-card" href="#booking" data-service="Microblading (PMU Brows)"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_500/v1792732603/MICROBLADING.jpg" alt="Microblading"><div class="service-card-label">MICROBLADING <b aria-hidden="true">→</b></div></a>
+      <a class="service-card" href="#booking" data-service="Combo Brows"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_500/v1792732797/COMBO_BROWS.jpg" alt="Combo brows"><div class="service-card-label">COMBO BROWS <b aria-hidden="true">→</b></div></a>
+      <a class="service-card" id="products" href="#booking" data-service="Nano Brows"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_500/v1792731695/NANO_STROKES.jpg" alt="Nano strokes"><div class="service-card-label">NANO STROKES <b aria-hidden="true">→</b></div></a>
     </div>
     <div class="location-card">
       <div>
         <div class="eyebrow">Visit Our Lounge</div>
         <h3>Find Us in Wuse 2,<br>Abuja</h3>
         <div class="contact-list">
-          <div class="contact-item"><div class="contact-icon">⌖</div><div><strong>Shop SF03, 2nd Floor</strong><span>Olive Plaza, Wuse 2, Abuja, Nigeria.</span></div></div>
-          <div class="contact-item"><div class="contact-icon">☎</div><div><strong><a href="tel:+2348164592884">+234 816 459 2884</a></strong><span>Call or WhatsApp us</span></div></div>
-          <div class="contact-item"><div class="contact-icon">✉</div><div><strong><a href="mailto:clizzbella@gmail.com">clizzbella@gmail.com</a></strong><span>Send us an email</span></div></div>
-          <div class="contact-item"><div class="contact-icon">◷</div><div><strong>Opening Hours</strong><span>Mon–Sat, 8:00 am – 6:00 pm</span></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true">⌖</div><div><strong>Shop SF03, 2nd Floor</strong><span>Olive Plaza, Wuse 2, Abuja, Nigeria.</span></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true">☎</div><div><strong><a href="tel:+2348164592884">+234 816 459 2884</a></strong><span>Call or WhatsApp us</span></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true">✉</div><div><strong><a href="mailto:clizzbella@gmail.com">clizzbella@gmail.com</a></strong><span>Send us an email</span></div></div>
+          <div class="contact-item"><div class="contact-icon" aria-hidden="true">◷</div><div><strong>Opening Hours</strong><span>Mon–Sat, 8:00 am – 6:00 pm</span></div></div>
         </div>
-        <a class="btn btn-gold map-btn" href="https://www.google.com/maps/search/?api=1&query=Olive+Plaza+Wuse+2+Abuja" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Get Directions on Google Maps</a>
+        <a class="btn btn-gold map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Olive+Plaza+Wuse+2+Abuja" target="_blank" rel="noopener noreferrer">⌖ &nbsp; Get Directions on Google Maps</a>
       </div>
-      <iframe class="map" src="https://www.google.com/maps?q=Olive%20Plaza%2C%20Wuse%202%2C%20Abuja%2C%20Nigeria&output=embed" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Clizzbella Beauty Lounge location map"></iframe>
+      <iframe class="map" src="https://www.google.com/maps?q=Olive%20Plaza%2C%20Wuse%202%2C%20Abuja%2C%20Nigeria&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Clizzbella Beauty Lounge location map"></iframe>
     </div>
   </div>
 </section>
 
 <div class="stats">
   <div class="container statsin">
-    <div class="stat"><div class="stat-icon">♛</div><div><strong>500+</strong><span>Happy Clients</span></div></div>
-    <div class="stat"><div class="stat-icon">★</div><div><strong>5.0</strong><span>Customer Rating</span></div></div>
-    <div class="stat"><div class="stat-icon">◆</div><div><strong>Premium</strong><span>Products Used</span></div></div>
-    <div class="stat"><div class="stat-icon">⌖</div><div><strong>Wuse 2, Abuja</strong><span>Our Location</span></div></div>
+    <div class="stat"><div class="stat-icon" aria-hidden="true">♛</div><div><strong>500+</strong><span>Happy Clients</span></div></div>
+    <div class="stat"><div class="stat-icon" aria-hidden="true">★</div><div><strong>5.0</strong><span>Customer Rating</span></div></div>
+    <div class="stat"><div class="stat-icon" aria-hidden="true">◆</div><div><strong>Premium</strong><span>Products Used</span></div></div>
+    <div class="stat"><div class="stat-icon" aria-hidden="true">⌖</div><div><strong>Wuse 2, Abuja</strong><span>Our Location</span></div></div>
   </div>
 </div>
 
 <section class="standard" id="about">
   <div class="container about">
-    <div class="about-image"><img loading="lazy" src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_900/v1790600197/about_us_clizz_xizzwx.jpg" alt="Clizzbella beauty experience"></div>
+    <div class="about-image"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_900/v1790600197/about_us_clizz_xizzwx.jpg" alt="Clizzbella beauty experience"></div>
     <div class="about-copy">
       <div class="eyebrow">About Clizzbella</div>
       <h2 class="section-title">Where Beauty Meets <span class="gold-text">Confidence</span></h2>
@@ -364,10 +380,10 @@ section.standard{padding:70px 0}
       <p>Clizzbella Beauty Lounge is a beauty and aesthetics brand in Abuja focused on helping clients look polished, confident and authentically themselves.</p>
       <p>Our approach combines professional service, attention to detail and a welcoming client experience — from your first consultation to your finished look.</p>
       <div class="checks">
-        <div class="check"><b>✓</b> Personalised beauty consultations</div>
-        <div class="check"><b>✓</b> Professional and comfortable environment</div>
-        <div class="check"><b>✓</b> Quality beauty products</div>
-        <div class="check"><b>✓</b> Focus on precision and client care</div>
+        <div class="check"><b aria-hidden="true">✓</b> Personalised beauty consultations</div>
+        <div class="check"><b aria-hidden="true">✓</b> Professional and comfortable environment</div>
+        <div class="check"><b aria-hidden="true">✓</b> Quality beauty products</div>
+        <div class="check"><b aria-hidden="true">✓</b> Focus on precision and client care</div>
       </div>
       <a class="btn btn-gold" href="#booking">Start Your Beauty Journey →</a>
     </div>
@@ -378,10 +394,10 @@ section.standard{padding:70px 0}
   <div class="container">
     <div class="section-head"><div class="eyebrow">Why Clients Choose Us</div><h2 class="section-title">Luxury Care, <span class="gold-text">Thoughtful Results</span></h2><p>Every visit is designed to feel elevated, personal and confidence-building.</p></div>
     <div class="benefits-grid">
-      <div class="benefit"><div class="benefit-icon">✦</div><h3>Precision</h3><p>Detailed beauty work tailored to your facial features and personal style.</p></div>
-      <div class="benefit"><div class="benefit-icon">♛</div><h3>Premium Quality</h3><p>Only trusted products and professional techniques for lasting, beautiful results.</p></div>
-      <div class="benefit"><div class="benefit-icon">♥</div><h3>Comfort</h3><p>A clean, calm and welcoming environment where you can truly relax.</p></div>
-      <div class="benefit"><div class="benefit-icon">◌</div><h3>Personal Care</h3><p>We take time to listen, advise and guide you toward the right beauty choices.</p></div>
+      <div class="benefit"><div class="benefit-icon" aria-hidden="true">✦</div><h3>Precision</h3><p>Detailed beauty work tailored to your facial features and personal style.</p></div>
+      <div class="benefit"><div class="benefit-icon" aria-hidden="true">♛</div><h3>Premium Quality</h3><p>Only trusted products and professional techniques for lasting, beautiful results.</p></div>
+      <div class="benefit"><div class="benefit-icon" aria-hidden="true">♥</div><h3>Comfort</h3><p>A clean, calm and welcoming environment where you can truly relax.</p></div>
+      <div class="benefit"><div class="benefit-icon" aria-hidden="true">◌</div><h3>Personal Care</h3><p>We take time to listen, advise and guide you toward the right beauty choices.</p></div>
     </div>
   </div>
 </section>
@@ -390,21 +406,28 @@ section.standard{padding:70px 0}
   <div class="container">
     <div class="section-head"><div class="eyebrow">Our Gallery</div><h2 class="section-title">A Glimpse of the <span class="gold-text">Clizzbella Experience</span></h2><p>Explore our beauty work, treatments, products and the atmosphere at Clizzbella Beauty Lounge.</p></div>
     <div class="gallery">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=90" alt="Beauty professional">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=90" alt="Beauty products">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=90" alt="Beauty lounge interior">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1200&q=90" alt="Beauty detail">
+      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_900/v1792731695/NANO_STROKES.jpg" data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792731695/NANO_STROKES.jpg" alt="Nano strokes">
+      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_700/v1792732603/MICROBLADING.jpg" data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792732603/MICROBLADING.jpg" alt="Microblading">
+      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_700/v1792730798/LAMINATION_and_TINT.jpg" data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792730798/LAMINATION_and_TINT.jpg" alt="Lamination and tint">
+      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_900/v1792730797/LASH_EXTENSION.jpg" data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792730797/LASH_EXTENSION.jpg" alt="Lash extension">
     </div>
   </div>
 </section>
 
+<dialog class="image-zoom" aria-label="Zoomed gallery image">
+  <button class="image-zoom-close" type="button" aria-label="Close image">&times;</button>
+  <figure style="margin:0">
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+</dialog>
 
 <section class="standard video-library" id="beauty-videos">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Beauty Tips & Inspiration</div>
-      <h2 class="section-title">Watch, Learn & <span class="gold-text">Glow</span></h2>
-      <p>Explore beauty tutorials and inspiration. Choose any video to play it here without leaving the Clizzbella website.</p>
+      <div class="eyebrow">Beauty that keeps you glowing</div>
+      <h2 class="section-title">Watch Our Real-Life Experience &amp; <span class="gold-text">Glow</span></h2>
+      <p>Explore our beauty services and professionalism. Here are a few videos you can watch without leaving the Clizzbella website.</p>
     </div>
     <div class="video-player-wrap">
       <div class="video-player">
@@ -416,20 +439,20 @@ section.standard{padding:70px 0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
       </div>
-      <div class="video-now"><span>Now playing</span><div id="beautyVideoTitle">Clean, glowy makeup inspiration</div></div>
+      <div class="video-now"><span>Now playing</span><div id="beautyVideoTitle" aria-live="polite">Clean, glowy makeup</div></div>
     </div>
-    <div class="video-grid" aria-label="Beauty video tutorials">
+    <div class="video-grid" aria-label="Beauty videos">
       <button class="video-card" type="button" data-video="Bscwg_cQzc4" data-title="Clean, glowy makeup inspiration">
         <span class="video-thumb" aria-hidden="true">✦</span>
-        <span class="video-card-copy"><strong>Clean, Glowy Makeup</strong><span>Everyday beauty inspiration · Play here</span></span>
+        <span class="video-card-copy"><strong>Clean, Glowy Makeup</strong><span>Everyday looks that keep you beautiful · Play here</span></span>
       </button>
       <button class="video-card" type="button" data-video="IKO1OVdtLFU" data-title="How to apply individual false eyelashes">
         <span class="video-thumb" aria-hidden="true">♡</span>
-        <span class="video-card-copy"><strong>Lash Application Tips</strong><span>False-lash application tutorial · Play here</span></span>
+        <span class="video-card-copy"><strong>Lash Application</strong><span>You will enjoy your lashes · Play here</span></span>
       </button>
       <button class="video-card" type="button" data-video="aLHE2SqzI08" data-title="How to apply individual lashes">
         <span class="video-thumb" aria-hidden="true">◈</span>
-        <span class="video-card-copy"><strong>Individual Lashes</strong><span>Lash technique inspiration · Play here</span></span>
+        <span class="video-card-copy"><strong>Brow Correction</strong><span>Looking for the best face look? · Play here</span></span>
       </button>
       <button class="video-card" type="button" data-video="Bscwg_cQzc4" data-title="Clean makeup look inspiration">
         <span class="video-thumb" aria-hidden="true">✧</span>
@@ -437,16 +460,16 @@ section.standard{padding:70px 0}
       </button>
       <button class="video-card" type="button" data-video="IKO1OVdtLFU" data-title="False eyelash placement and finishing">
         <span class="video-thumb" aria-hidden="true">♛</span>
-        <span class="video-card-copy"><strong>Eye Beauty Inspiration</strong><span>Finishing touches for eye looks · Play here</span></span>
+        <span class="video-card-copy"><strong>Nail Services</strong><span>Nail fixing is what you enjoy most · Play here</span></span>
       </button>
       <button class="video-card" type="button" data-video="aLHE2SqzI08" data-title="Lash application techniques">
         <span class="video-thumb" aria-hidden="true">❋</span>
-        <span class="video-card-copy"><strong>Lash Techniques</strong><span>More lash application inspiration · Play here</span></span>
+        <span class="video-card-copy"><strong>Check Out Our Tools</strong><span>Spa Beds/Stools/Lights/Trolleys · Play here</span></span>
       </button>
     </div>
     <div class="video-actions">
       <a class="btn btn-gold" href="#booking">Book a Beauty Appointment →</a>
-      <a class="btn" style="border:1px solid var(--gold);color:var(--text)" href="https://www.youtube.com/results?search_query=beauty+lash+brow+skincare+tutorials" target="_blank" rel="noopener noreferrer">Explore More on YouTube ↗</a>
+      <a class="btn btn-line" href="https://www.youtube.com/results?search_query=beauty+lash+brow+skincare+tutorials" target="_blank" rel="noopener noreferrer">Explore More on YouTube ↗</a>
     </div>
   </div>
 </section>
@@ -455,8 +478,8 @@ section.standard{padding:70px 0}
   <div class="container">
     <div class="section-head"><div class="eyebrow">Client Transformations</div><h2 class="section-title">Before <span class="gold-text">&amp; After</span></h2><p>See the difference a little Clizzbella care can make.</p></div>
     <div class="results-pair">
-      <div class="result-card"><img class="result-photo" loading="lazy" src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_900/v1790759108/clizzbella_old_hugc23.jpg" alt="Before beauty treatment"><div class="result-label">Before</div></div>
-      <div class="result-card"><img class="result-photo" loading="lazy" src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_900/v1790601481/clizzbella_bg_fyagzr.jpg" alt="After beauty treatment"><div class="result-label">After</div></div>
+      <div class="result-card"><img class="result-photo" loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_850/v1792733345/BEFORE.jpg" alt="Before beauty treatment"><div class="result-label">Before</div></div>
+      <div class="result-card"><img class="result-photo" loading="lazy" decoding="async" src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_850/v1792733345/AFTER.jpg" alt="After beauty treatment"><div class="result-label">After</div></div>
     </div>
   </div>
 </section>
@@ -465,9 +488,9 @@ section.standard{padding:70px 0}
   <div class="container">
     <div class="section-head"><div class="eyebrow">Client Love</div><h2 class="section-title">What Our Clients <span class="gold-text">Say</span></h2><p>Real experiences from clients who left feeling polished and confident.</p></div>
     <div class="testimonial-grid">
-      <article class="testimonial-card"><div class="quote-mark">“</div><p>The lash work was beautiful and so natural. The salon feels calm, clean and professional from the moment you walk in.</p><div class="person"><div class="person-badge">A</div><div><strong>Aisha M.</strong><span>Client</span></div></div></article>
-      <article class="testimonial-card"><div class="quote-mark">“</div><p>My brows were shaped perfectly and the service was very detailed. I left looking refreshed and confident.</p><div class="person"><div class="person-badge">N</div><div><strong>Naomi B.</strong><span>Client</span></div></div></article>
-      <article class="testimonial-card"><div class="quote-mark">“</div><p>I booked a skin treatment and loved the personalised care. It felt luxurious but still warm and welcoming.</p><div class="person"><div class="person-badge">R</div><div><strong>Ruth O.</strong><span>Client</span></div></div></article>
+      <article class="testimonial-card"><div class="quote-mark" aria-hidden="true">“</div><p>The lash work was beautiful and so natural. The salon feels calm, clean and professional from the moment you walk in.</p><div class="person"><div class="person-badge" aria-hidden="true">A</div><div><strong>Aisha M.</strong><span>Client</span></div></div></article>
+      <article class="testimonial-card"><div class="quote-mark" aria-hidden="true">“</div><p>My brows were shaped perfectly and the service was very detailed. I left looking refreshed and confident.</p><div class="person"><div class="person-badge" aria-hidden="true">N</div><div><strong>Naomi B.</strong><span>Client</span></div></div></article>
+      <article class="testimonial-card"><div class="quote-mark" aria-hidden="true">“</div><p>I booked a skin treatment and loved the personalised care. It felt luxurious but still warm and welcoming.</p><div class="person"><div class="person-badge" aria-hidden="true">R</div><div><strong>Ruth O.</strong><span>Client</span></div></div></article>
     </div>
   </div>
 </section>
@@ -476,21 +499,23 @@ section.standard{padding:70px 0}
   <div class="container">
     <div class="section-head"><div class="eyebrow">Appointments &amp; Enquiries</div><h2 class="section-title">Ready for Your <span class="gold-text">Next Look?</span></h2><p>Send us your details and our team will contact you on WhatsApp to confirm availability.</p></div>
     <form class="booking-box" id="bookingForm">
-      <input name="name" placeholder="Full name" aria-label="Full name" autocomplete="name" required>
-      <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Phone / WhatsApp number" aria-label="Phone or WhatsApp number" required>
+      <input name="name" placeholder="Full name" aria-label="Full name" autocomplete="name" maxlength="80" required>
+      <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Phone / WhatsApp number" aria-label="Phone or WhatsApp number" maxlength="20" required>
       <select name="service" aria-label="Service" required>
         <option value="">Select a service</option>
         <option>Lash Extensions</option>
-        <option>Brow Shaping &amp; Tinting</option>
-        <option>Semi-Permanent Makeup</option>
-        <option>Facial Skincare</option>
+        <option>Brow Lamination &amp; Tinting</option>
+        <option>Makeup</option>
+        <option>Microblading (PMU Brows)</option>
+        <option>Ombré Brows</option>
+        <option>Combo Brows</option>
+        <option>Nano Brows</option>
         <option>Nails Services</option>
         <option>Beauty Products</option>
-        <option>Consultation</option>
       </select>
       <input name="date" type="date" aria-label="Preferred appointment date" required>
-      <input name="time" type="time" required aria-label="Preferred appointment time">
-      <textarea class="full" name="message" aria-label="Message" placeholder="Tell us what you would like to book or ask about..."></textarea>
+      <input name="time" type="time" aria-label="Preferred appointment time" required>
+      <textarea class="full" name="message" aria-label="Message" maxlength="600" placeholder="Tell us what you would like to book or ask about..."></textarea>
       <button class="btn btn-gold full" type="submit">Send Enquiry on WhatsApp →</button>
     </form>
   </div>
@@ -504,17 +529,17 @@ section.standard{padding:70px 0}
       <div class="gold-line"></div>
       <p style="color:var(--muted);margin-bottom:22px">We are located at Olive Plaza, Wuse 2, Abuja. For appointments, please contact us before visiting.</p>
       <div class="contact-list">
-        <div class="contact-item"><div class="contact-icon">⌖</div><div><strong>Address</strong><span>Shop SF03, 2nd Floor, Olive Plaza, Wuse 2, Abuja, Nigeria.</span></div></div>
-        <div class="contact-item"><div class="contact-icon">☎</div><div><strong>Phone</strong><a href="tel:+2348164592884">+234 816 459 2884</a></div></div>
-        <div class="contact-item"><div class="contact-icon">✉</div><div><strong>Email</strong><a href="mailto:clizzbella@gmail.com">clizzbella@gmail.com</a></div></div>
-        <div class="contact-item"><div class="contact-icon">◷</div><div><strong>Opening Hours</strong><span>Mon–Sat, 8:00 am – 6:00 pm</span></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">⌖</div><div><strong>Address</strong><span>Shop SF03, 2nd Floor, Olive Plaza, Wuse 2, Abuja, Nigeria.</span></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">☎</div><div><strong>Phone</strong><a href="tel:+2348164592884">+234 816 459 2884</a></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">✉</div><div><strong>Email</strong><a href="mailto:clizzbella@gmail.com">clizzbella@gmail.com</a></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">◷</div><div><strong>Opening Hours</strong><span>Mon–Sat, 8:00 am – 6:00 pm</span></div></div>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Olive+Plaza+Wuse+2+Abuja" target="_blank" rel="noopener noreferrer">⌖ Get Directions</a>
-        <a class="btn" style="border:1px solid var(--gold);color:var(--text)" href="https://wa.me/2348164592884" target="_blank" rel="noopener noreferrer">◉ WhatsApp</a>
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=Olive+Plaza+Wuse+2+Abuja" target="_blank" rel="noopener noreferrer">⌖ Get Directions</a>
+        <a class="btn btn-line" href="https://wa.me/2348164592884" target="_blank" rel="noopener noreferrer">◉ WhatsApp</a>
       </div>
     </div>
-    <iframe class="big-map" src="https://www.google.com/maps?q=Olive%20Plaza%2C%20Wuse%202%2C%20Abuja%2C%20Nigeria&output=embed" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Google Map showing Clizzbella Beauty Lounge at Olive Plaza, Wuse 2, Abuja"></iframe>
+    <iframe class="big-map" src="https://www.google.com/maps?q=Olive%20Plaza%2C%20Wuse%202%2C%20Abuja%2C%20Nigeria&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Google Map showing Clizzbella Beauty Lounge at Olive Plaza, Wuse 2, Abuja"></iframe>
   </div>
 </section>
 
@@ -531,7 +556,7 @@ section.standard{padding:70px 0}
           <span>Mon–Sat, 8:00 am – 6:00 pm</span>
           <a href="tel:+2348164592884">+234 816 459 2884</a>
           <a href="mailto:clizzbella@gmail.com">clizzbella@gmail.com</a>
-          <!-- TODO: replace YOUR_… with the real profile names -->
+          <!-- TODO: replace YOUR_… with the real profile names, or delete these links -->
           <a href="https://instagram.com/YOUR_INSTAGRAM_HANDLE" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://tiktok.com/@YOUR_TIKTOK_HANDLE" target="_blank" rel="noopener noreferrer">TikTok</a>
           <a href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -551,57 +576,55 @@ section.standard{padding:70px 0}
   <a href="#booking" class="gold">Book</a>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const menu = document.getElementById('menu');
-const links = document.getElementById('navlinks');
-const preloader = document.getElementById('preloader');
+const $ = (s, r = document) => r.querySelector(s);
+const menu = $('#menu'), links = $('#navlinks'), preloader = $('#preloader'), navEl = $('#nav');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// show the preloader once per session
-let seenBefore = false;
-try { seenBefore = sessionStorage.getItem('clz') === '1'; sessionStorage.setItem('clz', '1'); } catch (e) {}
-if (seenBefore && preloader) { preloader.remove(); document.body.classList.remove('is-loading'); }
-
+// Preloader: shown once per session; the <head> script hides it instantly for return visits
+let seen = false;
+try { seen = sessionStorage.getItem('clz') === '1'; sessionStorage.setItem('clz', '1'); } catch (e) {}
+if (seen && preloader) { preloader.remove(); document.body.classList.remove('is-loading'); }
 if (preloader && preloader.isConnected) {
-  const minimumDisplay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 250 : 1200;
-  const loaderStarted = performance.now();
-  let pageReady = document.readyState === 'complete';
-  let loaderDismissed = false;
-  const dismissPreloader = () => {
-    if (!pageReady || loaderDismissed) return;
-    const remaining = minimumDisplay - (performance.now() - loaderStarted);
-    if (remaining > 0) { window.setTimeout(dismissPreloader, remaining); return; }
-    loaderDismissed = true;
+  const minShow = reduced ? 250 : 1200, t0 = performance.now();
+  let ready = document.readyState === 'complete', done = false;
+  const dismiss = () => {
+    if (!ready || done) return;
+    const left = minShow - (performance.now() - t0);
+    if (left > 0) { setTimeout(dismiss, left); return; }
+    done = true;
     preloader.classList.add('is-dismissed');
     preloader.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('is-loading');
-    window.setTimeout(() => preloader.remove(), 750);
+    setTimeout(() => preloader.remove(), 750);
   };
-  if (!pageReady) window.addEventListener('load', () => { pageReady = true; dismissPreloader(); }, { once: true });
-  window.setTimeout(() => { pageReady = true; dismissPreloader(); }, 6500);
-  dismissPreloader();
+  if (!ready) addEventListener('load', () => { ready = true; dismiss(); }, { once: true });
+  setTimeout(() => { ready = true; dismiss(); }, 6500);
+  dismiss();
 }
 
-// sticky nav + menu
-const navEl = document.getElementById('nav');
+// Sticky nav + mobile menu
 addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 60), { passive: true });
+const closeMenu = () => { links.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); };
 menu.addEventListener('click', () => { links.classList.toggle('open'); menu.setAttribute('aria-expanded', links.classList.contains('open')); });
-document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); }));
-document.getElementById('year').textContent = new Date().getFullYear();
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+$('#year').textContent = new Date().getFullYear();
 
-// active link follows scroll
+// Active nav link follows scroll
 const navAnchors = [...links.querySelectorAll('a:not(.btn)')];
 const spy = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
 }), { rootMargin: '-45% 0px -50% 0px' });
-navAnchors.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+navAnchors.forEach(a => { const s = $(a.getAttribute('href')); if (s) spy.observe(s); });
 
-// 3D orb: if WebGL fails the orb hides and the rest of the page keeps working
-const sceneCanvas = document.getElementById('serviceScene');
-if (sceneCanvas && window.THREE) { try {
+// 3D orb (decorative). three.js is loaded lazily after the page is idle,
+// so it never blocks first paint. If it fails, the orb hides and the page still works.
+const sceneCanvas = $('#serviceScene');
+function initOrb() { try {
   const scene = new THREE.Scene();
   const renderer = new THREE.WebGLRenderer({ canvas: sceneCanvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.outputEncoding = THREE.sRGBEncoding;
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
   camera.position.z = 7.2;
@@ -636,12 +659,11 @@ if (sceneCanvas && window.THREE) { try {
   };
   new ResizeObserver(resizeScene).observe(sceneCanvas.parentElement);
   resizeScene();
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let visible = true;
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(sceneCanvas);
-  const animateScene = (time) => {
+  const animateScene = time => {
     if (visible && !document.hidden) {
-      if (!reducedMotion) { orbit.rotation.y = time * 0.00022; orbit.rotation.x = Math.sin(time * 0.00024) * 0.12; center.rotation.y = time * 0.00012; }
+      if (!reduced) { orbit.rotation.y = time * 0.00022; orbit.rotation.x = Math.sin(time * 0.00024) * 0.12; center.rotation.y = time * 0.00012; }
       renderer.render(scene, camera);
     }
     requestAnimationFrame(animateScene);
@@ -649,43 +671,69 @@ if (sceneCanvas && window.THREE) { try {
   requestAnimationFrame(animateScene);
 } catch (err) { sceneCanvas.parentElement.style.display = 'none'; } }
 
-// service cards pre-select the form
-document.querySelectorAll('[data-service]').forEach(el => el.addEventListener('click', () => {
-  document.querySelector('[name="service"]').value = el.dataset.service;
+if (sceneCanvas) {
+  const hideOrb = () => { sceneCanvas.parentElement.style.display = 'none'; };
+  const loadOrb = () => {
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.onload = () => window.THREE ? initOrb() : hideOrb();
+    s.onerror = hideOrb;
+    document.head.appendChild(s);
+  };
+  const whenIdle = () => 'requestIdleCallback' in window ? requestIdleCallback(loadOrb, { timeout: 3000 }) : setTimeout(loadOrb, 1500);
+  if (navigator.connection && navigator.connection.saveData) hideOrb();
+  else if (document.readyState === 'complete') whenIdle();
+  else addEventListener('load', whenIdle, { once: true });
+}
+
+// Service cards pre-select the booking form (values match the <option> text exactly)
+const serviceSelect = $('[name="service"]');
+document.querySelectorAll('[data-service]').forEach(el => el.addEventListener('click', () => { serviceSelect.value = el.dataset.service; }));
+
+// Video cards switch the embedded player in place
+const player = $('#beautyVideoPlayer'), videoTitle = $('#beautyVideoTitle');
+document.querySelectorAll('.video-card[data-video]').forEach(card => card.addEventListener('click', () => {
+  const title = card.dataset.title || 'Beauty video';
+  player.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(card.dataset.video) + '?autoplay=1&rel=0';
+  player.title = title;
+  videoTitle.textContent = title;
 }));
 
+// Gallery zoom loads the larger image only on demand
+const zoom = $('.image-zoom'), zoomImg = $('img', zoom), zoomCap = $('figcaption', zoom);
+document.querySelectorAll('.gallery img').forEach(img => img.addEventListener('click', () => {
+  zoomImg.src = img.dataset.full || img.src;
+  zoomImg.alt = img.alt;
+  zoomCap.textContent = img.alt;
+  zoom.showModal();
+}));
+$('.image-zoom-close', zoom).addEventListener('click', () => zoom.close());
+zoom.addEventListener('click', e => { if (e.target === zoom) zoom.close(); });
 
-// Beauty video cards: switch the embedded player without navigating away.
-document.querySelectorAll('.video-card[data-video]').forEach(card => {
-  card.addEventListener('click', () => {
-    const videoId = card.dataset.video;
-    const title = card.dataset.title || 'Beauty tutorial';
-    const player = document.getElementById('beautyVideoPlayer');
-    player.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0';
-    player.title = title;
-    document.getElementById('beautyVideoTitle').textContent = title;
-  });
-});
+// No past dates
+const dateEl = $('[name="date"]'), now = new Date();
+dateEl.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 
-// no past dates
-const dEl = document.querySelector('[name="date"]'), nowD = new Date();
-dEl.min = new Date(nowD.getTime() - nowD.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-
-document.getElementById('bookingForm').addEventListener('submit', function(e){
+// Booking form -> WhatsApp message
+// (window.open with 'noopener' always returns null, so a temporary anchor is used instead)
+$('#bookingForm').addEventListener('submit', e => {
   e.preventDefault();
-  const f = new FormData(e.target);
+  const f = new FormData(e.target), v = k => (f.get(k) || '').toString().trim();
   const msg =
 `Hello Clizzbella Beauty Lounge,
 
 I would like to make an appointment/enquiry.
 
-Name: ${f.get('name')}
-Phone: ${f.get('phone')}
-Service: ${f.get('service')}
-Preferred date: ${f.get('date')}
-Preferred time: ${f.get('time')}
-Message: ${f.get('message') || 'N/A'}`;
-  window.open('https://wa.me/2348164592884?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+Name: ${v('name')}
+Phone: ${v('phone')}
+Service: ${v('service')}
+Preferred date: ${v('date')}
+Preferred time: ${v('time')}
+Message: ${v('message') || 'N/A'}`;
+  const a = document.createElement('a');
+  a.href = 'https://wa.me/2348164592884?text=' + encodeURIComponent(msg);
+  a.target = '_blank'; a.rel = 'noopener noreferrer';
+  document.body.appendChild(a); a.click(); a.remove();
 });
 </script>
 
