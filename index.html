@@ -7,20 +7,25 @@
 <meta name="description" content="Clizzbella Beauty Lounge — premium beauty services, lashes, brows, semi-permanent makeup, skincare and beauty products in Wuse 2, Abuja.">
 <title>Clizzbella Beauty Lounge | Wuse 2, Abuja</title>
 <!-- TODO: replace YOUR-DOMAIN below once the site is live -->
-<link rel="canonical" href="https://YOUR-DOMAIN/">
+<link rel="canonical" href="https://clizzbella.com.ng">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clizzbella Beauty Lounge">
 <meta property="og:locale" content="en_NG">
 <meta property="og:title" content="Clizzbella Beauty Lounge | Wuse 2, Abuja">
 <meta property="og:description" content="Lashes, brows, semi-permanent makeup, skincare and nails in Wuse 2, Abuja.">
 <meta property="og:image" content="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1200,h_630,c_fill/v1790601481/clizzbella_bg_fyagzr.jpg">
-<meta property="og:url" content="https://YOUR-DOMAIN/">
+<meta property="og:url" content="https://clizzbella.com.ng">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/leelnqfq/image/upload/v1790597607/clizzbella-192x192_fcjhap.png">
-<link rel="apple-touch-icon" href="https://res.cloudinary.com/leelnqfq/image/upload/v1790597607/clizzbella-192x192_fcjhap.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Clizzbella">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="/manifest.webmanifest">
 <!-- Preload now matches the image the hero actually uses (it previously preloaded a different file) -->
 <link rel="preload" as="image" fetchpriority="high" href="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792668341/clizzbella_beaulty.jpg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -255,6 +260,14 @@ section.standard{padding:70px 0}
 .video-library .video-card-copy span{font-size:13px;color:var(--muted)}
 .video-library .video-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
 .btn-line{border:1px solid var(--gold);color:var(--text)}
+.install-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:70;width:min(94%,460px);display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(13,11,8,.97);color:#fff;border:1px solid rgba(205,175,54,.45);border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.4)}
+.install-bar[hidden]{display:none}
+.install-bar img{width:40px;height:40px;border-radius:10px;flex:none}
+.install-bar p{flex:1;font-size:13px;line-height:1.4}
+.install-bar .btn{padding:10px 16px;font-size:13px;flex:none}
+.install-close{background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;flex:none}
+@media(max-width:850px){.install-bar{bottom:84px}} /* sits above the mobile Call/WhatsApp/Book bar */
+@media(display-mode:standalone){.install-bar{display:none!important}}
 </style>
 </head>
 <body class="is-loading">
@@ -438,6 +451,7 @@ section.standard{padding:70px 0}
         <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: Brow correction"></button></div>
         <div class="video-card-copy"><strong>Brow Correction</strong><span>Looking for the best face look?</span></div>
       </article>
+      </div>
 
       <div class="video-grid" aria-label="Beauty videos">
       <article class="video-card" data-video="O6VPA4OFcqE" data-short data-title="Lash Extensions">
@@ -553,7 +567,12 @@ section.standard{padding:70px 0}
     </div>
   </div>
 </footer>
-
+<div class="install-bar" id="installBar" role="dialog" aria-label="Install Clizzbella app" hidden>
+  <img src="/icons/icon-192.png" alt="" width="40" height="40">
+  <p id="installMsg">Install the Clizzbella app for faster booking.</p>
+  <button class="btn btn-gold" id="installBtn" type="button">Install</button>
+  <button class="install-close" id="installClose" type="button" aria-label="Dismiss">&times;</button>
+</div>
 <div class="mobile-cta">
   <a href="tel:+2348164592884">Call</a>
   <a href="https://wa.me/2348164592884" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -744,6 +763,47 @@ Message: ${v('message') || 'N/A'}`;
   a.target = '_blank'; a.rel = 'noopener noreferrer';
   document.body.appendChild(a); a.click(); a.remove();
 });
+
+// PWA: service worker + install prompt (Android) / Add-to-Home-Screen hint (iOS)
+(() => {
+  if ('serviceWorker' in navigator) {
+    addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+  }
+
+  const bar = document.querySelector('#installBar'), msg = document.querySelector('#installMsg');
+  const btn = document.querySelector('#installBtn'), close = document.querySelector('#installClose');
+  const KEY = 'clz-install-dismissed', COOLDOWN = 7 * 864e5; // re-ask after 7 days
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const dismissedRecently = () => { try { return Date.now() - Number(localStorage.getItem(KEY) || 0) < COOLDOWN; } catch (e) { return false; } };
+  const hide = () => { bar.hidden = true; try { localStorage.setItem(KEY, Date.now()); } catch (e) {} };
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  if (standalone || dismissedRecently()) return;
+  close.addEventListener('click', hide);
+
+  // Android / desktop Chromium
+  let deferred = null;
+  addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferred = e;
+    setTimeout(() => { if (!dismissedRecently()) bar.hidden = false; }, 4000);
+  });
+  btn.addEventListener('click', async () => {
+    if (!deferred) return hide();
+    deferred.prompt();
+    await deferred.userChoice;
+    deferred = null;
+    bar.hidden = true;
+  });
+  addEventListener('appinstalled', () => { bar.hidden = true; });
+
+  // iOS: no install API, so show instructions
+  if (isIOS) {
+    msg.innerHTML = 'Install this app: tap <strong>Share</strong> <span aria-hidden="true">⎙</span> then <strong>Add to Home Screen</strong>.';
+    btn.style.display = 'none';
+    setTimeout(() => { if (!dismissedRecently()) bar.hidden = false; }, 6000);
+  }
+})();
 </script>
 
 </body>
