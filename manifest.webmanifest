@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "Clizzbella Beauty Lounge",
+  "short_name": "Clizzbella",
+  "description": "Lashes, brows, semi-permanent makeup, skincare and nails in Wuse 2, Abuja.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0b08",
+  "theme_color": "#0d0b08",
+  "lang": "en-NG",
+  "categories": ["beauty", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Book Appointment", "short_name": "Book", "url": "/#booking", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Gallery", "short_name": "Gallery", "url": "/#gallery", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
