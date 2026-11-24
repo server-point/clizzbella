@@ -437,9 +437,10 @@ section.standard{padding:95px 0}
     }
 
 }
-.image-zoom{width:min(94vw,1200px);max-width:none;max-height:92vh;padding:0;border:0;border-radius:12px;background:#111;overflow:visible}
+.image-zoom{width:min(94vw,1200px);max-width:none;max-height:92vh;padding:0;border:0;border-radius:12px;background:transparent;overflow:visible}
+.gallery-item:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
 .image-zoom::backdrop{background:rgba(0,0,0,.88)}
-.image-zoom img{display:block;max-width:94vw;max-height:88vh;margin:auto;object-fit:contain;border-radius:12px}
+.image-zoom img{display:block;width:auto;max-width:94vw;max-height:88vh;margin:auto;object-fit:contain;border-radius:12px}
 .image-zoom figcaption{padding:10px 16px;color:#fff;text-align:center;font-size:14px}
 .image-zoom-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;font-size:26px;line-height:1;cursor:pointer}
 .results-pair{max-width:850px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -1150,16 +1151,32 @@ cards.forEach(card => {
   });
 });
 
-// Gallery zoom loads the larger image only on demand
+// Gallery zoom: click (or Enter/Space) on any gallery card opens the large image
 const zoom = $('.image-zoom'), zoomImg = $('img', zoom), zoomCap = $('figcaption', zoom);
-document.querySelectorAll('.gallery img').forEach(img => img.addEventListener('click', () => {
-  zoomImg.src = img.dataset.full || img.src;
+
+const openZoom = item => {
+  const img = item.querySelector('img');
+  if (!img) return;
+  zoomImg.src = img.dataset.full || img.currentSrc || img.src;   // large version on demand
   zoomImg.alt = img.alt;
-  zoomCap.textContent = img.alt;
+  zoomCap.textContent = item.querySelector('h3')?.textContent.trim() || img.alt;
   zoom.showModal();
-}));
+};
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const title = item.querySelector('h3')?.textContent.trim() || 'image';
+  item.tabIndex = 0;                                   // keyboard accessible
+  item.setAttribute('role', 'button');
+  item.setAttribute('aria-label', 'Zoom image: ' + title);
+  item.addEventListener('click', () => openZoom(item));
+  item.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openZoom(item); }
+  });
+});
+
 $('.image-zoom-close', zoom).addEventListener('click', () => zoom.close());
-zoom.addEventListener('click', e => { if (e.target === zoom) zoom.close(); });
+zoom.addEventListener('click', e => { if (e.target === zoom) zoom.close(); });  // click backdrop to close
+zoom.addEventListener('close', () => zoomImg.removeAttribute('src'));           // free memory, avoid flash of old image
 
 // No past dates
 const dateEl = $('[name="date"]'), now = new Date();
