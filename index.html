@@ -171,15 +171,277 @@ section.standard{padding:95px 0}
 .person-badge{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#d9bc54,#b88f1b);color:#fff;display:grid;place-items:center;font-weight:700}
 .person strong{display:block;font-size:14px}
 .person span{font-size:12px;color:var(--muted)}
-.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:250px 250px;gap:12px}
-.gallery img{height:100%;border-radius:15px;cursor:zoom-in}
+/* =================================
+   CLIZZBELLA LUXURY GALLERY
+================================= */
+
+.luxury-gallery {
+    position: relative;
+    padding: 100px 0 !important;
+    background: #fffdf8;
+    overflow: hidden;
+}
+
+.luxury-gallery .section-head {
+    margin-bottom: 55px;
+}
+
+.luxury-gallery .section-head p {
+    max-width: 560px;
+    margin: 18px auto 0;
+    line-height: 1.8;
+}
+
+/* Gallery layout */
+
+.gallery-showcase {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 260px 260px;
+    gap: 16px;
+}
+
+/* Individual gallery cards */
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #17120d;
+    cursor: zoom-in;
+    isolation: isolate;
+}
+
+.gallery-featured {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(5) {
+    grid-column: span 3;
+}
+
+/* Images */
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+    filter: brightness(.82);
+}
+
+/* Elegant image overlay */
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+    background: linear-gradient(
+        to top,
+        rgba(8,7,5,.88) 0%,
+        rgba(8,7,5,.3) 35%,
+        transparent 75%
+    );
+    opacity: 1;
+    transition: background .4s ease;
+}
+
+.gallery-overlay span {
+    color: #e4c65b;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.gallery-overlay h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.gallery-overlay p {
+    color: rgba(255,255,255,.8);
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+/* Featured image typography */
+
+.gallery-featured .gallery-overlay {
+    padding: 35px;
+}
+
+.gallery-featured .gallery-overlay h3 {
+    font-size: clamp(30px, 3vw, 43px);
+}
+
+.gallery-featured .gallery-overlay span {
+    font-size: 10px;
+}
+
+/* Expand icon */
+
+.gallery-expand {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(13,11,8,.55);
+    border: 1px solid rgba(228,198,91,.65);
+    font-size: 19px;
+    transition: .3s;
+}
+
+.gallery-item:hover .gallery-expand {
+    background: #cdaf36;
+    color: #111;
+    transform: rotate(45deg);
+}
+
+/* Bottom signature */
+
+.gallery-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 22px;
+    padding-top: 17px;
+    border-top: 1px solid #e8e1d2;
+    color: #777064;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gallery-bottom b {
+    color: #cdaf36;
+    font-size: 16px;
+}
+
+/* Tablet */
+
+@media(max-width: 850px) {
+
+    .gallery-showcase {
+        grid-template-rows: 220px 220px;
+        gap: 12px;
+    }
+
+    .gallery-featured {
+        grid-column: span 6;
+    }
+
+    .gallery-item:nth-child(n+2) {
+        grid-column: span 3;
+    }
+
+    .gallery-overlay {
+        padding: 14px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 17px;
+    }
+
+    .gallery-featured .gallery-overlay {
+        padding: 22px;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width: 600px) {
+
+    .luxury-gallery {
+        padding: 65px 0 !important;
+    }
+
+    .luxury-gallery .section-head {
+        margin-bottom: 30px;
+    }
+
+    .gallery-showcase {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 300px 190px 190px;
+        gap: 10px;
+    }
+
+    .gallery-featured {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .gallery-item:nth-child(n+2) {
+        grid-column: auto;
+    }
+
+    .gallery-overlay {
+        padding: 13px;
+    }
+
+    .gallery-overlay span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 16px;
+    }
+
+    .gallery-overlay p {
+        font-size: 11px;
+    }
+
+    .gallery-featured .gallery-overlay {
+        padding: 22px;
+    }
+
+    .gallery-featured .gallery-overlay h3 {
+        font-size: 30px;
+    }
+
+    .gallery-expand {
+        width: 32px;
+        height: 32px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .gallery-bottom {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+}
 .image-zoom{width:min(94vw,1200px);max-width:none;max-height:92vh;padding:0;border:0;border-radius:12px;background:#111;overflow:visible}
 .image-zoom::backdrop{background:rgba(0,0,0,.88)}
 .image-zoom img{display:block;max-width:94vw;max-height:88vh;margin:auto;object-fit:contain;border-radius:12px}
 .image-zoom figcaption{padding:10px 16px;color:#fff;text-align:center;font-size:14px}
 .image-zoom-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;font-size:26px;line-height:1;cursor:pointer}
-.gallery img:first-child{grid-row:1/3}
-.gallery img:last-child{grid-column:2/4}
 .results-pair{max-width:850px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .result-card{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
 .result-photo{aspect-ratio:4/3;width:100%;display:block;border-radius:14px;object-fit:cover}
@@ -432,6 +694,7 @@ section.standard{padding:70px 0}
   </div>
 </section>
 
+<!--
 <section class="standard" id="gallery" style="padding-top:15px">
   <div class="container">
     <div class="section-head"><div class="eyebrow">Our Gallery</div><h2 class="section-title">A Glimpse of the <span class="gold-text">Clizzbella Experience</span></h2><p>Explore our beauty work, treatments, products and the atmosphere at Clizzbella Beauty Lounge.</p></div>
@@ -443,6 +706,124 @@ section.standard{padding:70px 0}
       <img loading="lazy" decoding="async" src="https://res.cloudinary.com/leelnqfq/image/upload/v1795545192/ombree_edidva.jpg" data-full="https://res.cloudinary.com/leelnqfq/image/upload/v1795545192/ombree_edidva.jpg" alt="Ombre">
     </div>
     </div>
+  </div>
+</section>-->
+<section class="standard luxury-gallery" id="gallery">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">THE ART OF BEAUTY</div>
+
+      <h2 class="section-title">
+        Beauty in Every <span class="gold-text">Detail.</span>
+      </h2>
+
+      <p>
+        Discover the artistry, precision and elegance behind
+        every Clizzbella beauty experience.
+      </p>
+    </div>
+
+    <div class="gallery-showcase">
+
+      <!-- Featured Image -->
+      <div class="gallery-item gallery-featured">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1000/v1795545191/nano_stroke_u6iafm.jpg"
+          data-full="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1600/v1795545191/nano_stroke_u6iafm.jpg"
+          alt="Professional nano strokes treatment"
+        >
+
+        <div class="gallery-overlay">
+          <span>01 / FEATURED WORK</span>
+          <h3>Nano Strokes</h3>
+          <p>Natural beauty. Refined precision.</p>
+        </div>
+
+        <span class="gallery-expand">↗</span>
+      </div>
+
+      <!-- Microblading -->
+      <div class="gallery-item">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_700/v1792732603/MICROBLADING.jpg"
+          data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792732603/MICROBLADING.jpg"
+          alt="Microblading beauty treatment"
+        >
+
+        <div class="gallery-overlay">
+          <span>02 / BROW ARTISTRY</span>
+          <h3>Microblading</h3>
+        </div>
+
+        <span class="gallery-expand">↗</span>
+      </div>
+
+      <!-- Lamination -->
+      <div class="gallery-item">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_700/v1792730798/LAMINATION_and_TINT.jpg"
+          data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792730798/LAMINATION_and_TINT.jpg"
+          alt="Brow lamination and tint"
+        >
+
+        <div class="gallery-overlay">
+          <span>03 / BROW DESIGN</span>
+          <h3>Lamination & Tint</h3>
+        </div>
+
+        <span class="gallery-expand">↗</span>
+      </div>
+
+      <!-- Lash Extension -->
+      <div class="gallery-item">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_700/v1792730797/LASH_EXTENSION.jpg"
+          data-full="https://res.cloudinary.com/v0guckc2/image/upload/f_auto,q_auto,w_1600/v1792730797/LASH_EXTENSION.jpg"
+          alt="Professional lash extensions"
+        >
+
+        <div class="gallery-overlay">
+          <span>04 / LASH ARTISTRY</span>
+          <h3>Lash Extensions</h3>
+        </div>
+
+        <span class="gallery-expand">↗</span>
+      </div>
+
+      <!-- Ombre -->
+      <div class="gallery-item">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_700/v1795545192/ombree_edidva.jpg"
+          data-full="https://res.cloudinary.com/leelnqfq/image/upload/f_auto,q_auto,w_1600/v1795545192/ombree_edidva.jpg"
+          alt="Ombre brows treatment"
+        >
+
+        <div class="gallery-overlay">
+          <span>05 / SEMI-PERMANENT MAKEUP</span>
+          <h3>Ombré Brows</h3>
+        </div>
+
+        <span class="gallery-expand">↗</span>
+      </div>
+
+    </div>
+
+    <div class="gallery-bottom">
+      <span>BEAUTY · CONFIDENCE · YOU</span>
+      <span>CRAFTED WITH PRECISION <b>✦</b></span>
+    </div>
+
   </div>
 </section>
 
@@ -463,9 +844,9 @@ section.standard{padding:70px 0}
     </div>
 
     <div class="video-grid" aria-label="Beauty videos">
-      <article class="video-card" data-video="_UJyxRpLU7Q" data-short data-title="Ombre Brow">
-        <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: Ombre Brow"></button></div>
-        <div class="video-card-copy"><strong>Ombre Brow</strong><span>Everyday looks that keep you beautiful</span></div>
+      <article class="video-card" data-video="4dGdYDMgul4" data-short data-title="Brow Correction x Full Hybrid Cate Eye Set">
+        <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: Brow Correction x Full Hybrid Cate Eye Set"></button></div>
+        <div class="video-card-copy"><strong>Brow Correction x Full Hybrid Cate Eye Set</strong><span>Everyday looks that keep you beautiful</span></div>
       </article>
       <article class="video-card" data-video="hFQtm5P2OvI" data-short data-title="combo brow">
         <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: combo brow"></button></div>
@@ -478,9 +859,9 @@ section.standard{padding:70px 0}
     </div>
 
     <div class="video-grid" aria-label="Beauty videos">
-      <article class="video-card" data-video="91qASWC1zcI" data-short data-title="Nano strokes">
-        <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: Nano strokes"></button></div>
-        <div class="video-card-copy"><strong>Nano strokes</strong><span>Always look different and gorgeous</span></div>
+      <article class="video-card" data-video="S-CQis2ZMgY" data-short data-title="Wispy Medusa Set x Bottoms">
+        <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: Wispy Medusa Set x Bottoms"></button></div>
+        <div class="video-card-copy"><strong>Wispy Medusa Set x Bottoms</strong><span>Always look different and gorgeous</span></div>
       </article>
       <article class="video-card" data-video="P9XHUOX0hn8" data-short data-title="BEST NANO STROKES">
         <div class="video-thumb"><button class="video-play" type="button" aria-label="Play: BEST NANO STROKES"></button></div>
