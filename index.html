@@ -1283,5 +1283,196 @@ Message: ${v('message') || 'N/A'}`;
 })();
 </script>
 
+<!-- ============================================================
+     CHRISTMAS PROMO CARD — 15% OFF · 1–22 DECEMBER 2026
+============================================================ -->
+<style>
+.xmas-overlay{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:20px;background:rgba(6,5,3,.8);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.xmas-overlay[hidden]{display:none}
+.xmas-overlay.is-open{animation:xmas-fade .35s ease both}
+body.xmas-lock{overflow:hidden}
+@keyframes xmas-fade{from{opacity:0}to{opacity:1}}
+
+.xmas-card{position:relative;width:min(94vw,480px);max-height:calc(100vh - 44px);overflow-y:auto;text-align:center;color:var(--cream);padding:56px 28px 30px;border:1px solid rgba(205,175,54,.55);border-radius:22px;
+  background:radial-gradient(ellipse at 50% -25%,rgba(205,175,54,.24),transparent 62%),linear-gradient(160deg,#1a1509,#0d0b08 55%,#131009);
+  animation:xmas-pop .6s cubic-bezier(.18,.9,.22,1.15) .05s both,xmas-glow 3.6s ease-in-out 1s infinite}
+@supports(height:100dvh){.xmas-card{max-height:calc(100dvh - 44px)}}
+@keyframes xmas-pop{from{opacity:0;transform:translateY(26px) scale(.93)}to{opacity:1;transform:none}}
+@keyframes xmas-glow{0%,100%{box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 44px rgba(205,175,54,.14)}50%{box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 78px rgba(205,175,54,.32)}}
+
+.xmas-close{position:absolute;top:12px;right:14px;z-index:4;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,253,248,.09);color:#fff;font-size:23px;line-height:1;cursor:pointer;transition:background .2s,transform .2s}
+.xmas-close:hover{background:#e54848;transform:rotate(90deg)}
+
+/* String lights */
+.xmas-lights{position:absolute;top:18px;left:12%;right:12%;z-index:1;display:flex;justify-content:space-between;pointer-events:none}
+.xmas-lights:before{content:"";position:absolute;top:3px;left:-6px;right:-6px;height:1px;background:linear-gradient(90deg,transparent,rgba(205,175,54,.5),transparent)}
+.xmas-lights i{position:relative;width:8px;height:8px;border-radius:50%;background:var(--gold2);box-shadow:0 0 12px 2px rgba(228,198,91,.85);animation:xmas-blink 1.9s ease-in-out infinite}
+.xmas-lights i:nth-child(2n){animation-delay:.5s}
+.xmas-lights i:nth-child(3n){animation-delay:1s}
+@keyframes xmas-blink{0%,100%{opacity:1;box-shadow:0 0 12px 2px rgba(228,198,91,.85)}50%{opacity:.3;box-shadow:0 0 5px 1px rgba(228,198,91,.35)}}
+
+/* Snow */
+.xmas-snow{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.xmas-snow i{position:absolute;top:-12px;border-radius:50%;background:var(--cream);animation:xmas-fall var(--d,7s) linear var(--delay,0s) infinite;will-change:transform}
+@keyframes xmas-fall{from{transform:translate3d(0,-12px,0)}to{transform:translate3d(var(--sway,14px),110vh,0)}}
+
+/* Content */
+.xmas-body{position:relative;z-index:2}
+.xmas-kicker{color:var(--gold2);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase}
+.xmas-title{margin-top:10px;font-family:"Playfair Display",Georgia,serif;font-size:26px;font-weight:600;color:#fffdf8}
+.xmas-off{margin:8px 0 4px;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(58px,15vw,86px);line-height:1;
+  background:linear-gradient(100deg,#c69f27 0%,#fff2c0 35%,#e4c65b 50%,#fff2c0 65%,#c69f27 100%);
+  background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 8px 20px rgba(205,175,54,.28));animation:xmas-shimmer 3.4s linear infinite}
+.xmas-off small{font-size:.32em;font-family:"DM Sans",system-ui,sans-serif;font-weight:700;letter-spacing:7px;vertical-align:.55em;padding-left:.2em}
+@keyframes xmas-shimmer{to{background-position:-200% 0}}
+.xmas-sub{margin:2px 0 16px;font-size:14px;color:rgba(255,253,248,.72)}
+.xmas-dates{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:999px;border:1px solid rgba(228,198,91,.5);background:rgba(228,198,91,.1);color:var(--gold2);font-size:13px;font-weight:700}
+.xmas-dates span{color:rgba(228,198,91,.8)}
+
+.xmas-timer-label{margin:20px 0 8px;color:rgba(255,253,248,.55);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.xmas-countdown{display:flex;justify-content:center;gap:9px}
+.xmas-countdown>div{min-width:66px;padding:10px 8px 8px;border:1px solid rgba(205,175,54,.38);border-radius:12px;background:rgba(205,175,54,.07)}
+.xmas-countdown b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1.1;color:var(--gold2);font-variant-numeric:tabular-nums}
+.xmas-countdown span{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,253,248,.55)}
+
+.xmas-cta{margin-top:20px;width:100%}
+.xmas-fine{margin-top:14px;font-size:11px;color:rgba(255,253,248,.55)}
+.xmas-fine b{color:var(--gold2);letter-spacing:1px}
+
+/* Floating gift chip (reopens the card after dismissal) */
+.xmas-gift{position:fixed;left:16px;bottom:16px;z-index:65;width:52px;height:52px;border-radius:50%;border:1px solid rgba(228,198,91,.6);background:rgba(13,11,8,.95);color:var(--gold2);font-size:22px;cursor:pointer;animation:xmas-chip 2.4s ease-in-out infinite}
+.xmas-gift:hover{transform:translateY(-3px) scale(1.06)}
+@keyframes xmas-chip{0%,100%{box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 0 0 rgba(228,198,91,.5)}50%{box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 0 10px rgba(228,198,91,0)}}
+
+@media(max-width:850px){.xmas-gift{top:92px;bottom:auto;left:auto;right:12px;width:44px;height:44px;font-size:18px}}
+@media(max-width:480px){
+  .xmas-card{padding:52px 18px 24px}
+  .xmas-title{font-size:22px}
+  .xmas-dates{font-size:11.5px;padding:9px 14px}
+  .xmas-countdown>div{min-width:0;flex:1;padding:9px 4px 7px}
+  .xmas-countdown b{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .xmas-snow{display:none}
+  .xmas-card,.xmas-overlay.is-open,.xmas-off,.xmas-lights i,.xmas-close,.xmas-gift{animation:none}
+}
+</style>
+
+<div class="xmas-overlay" id="xmasOverlay" role="dialog" aria-modal="true" aria-labelledby="xmasTitle" hidden>
+  <div class="xmas-card">
+    <button class="xmas-close" id="xmasClose" type="button" aria-label="Close Christmas promo">&times;</button>
+    <div class="xmas-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="xmas-snow" id="xmasSnow" aria-hidden="true"></div>
+    <div class="xmas-body">
+      <p class="xmas-kicker">❆ Christmas Promo ❆</p>
+      <h3 class="xmas-title" id="xmasTitle">Celebrate the Season with</h3>
+      <div class="xmas-off">15%<small>OFF</small></div>
+      <p class="xmas-sub">all beauty services — lashes, brows, SPMU, nails &amp; more</p>
+      <div class="xmas-dates"><span aria-hidden="true">❆</span>1st – 22nd December 2026<span aria-hidden="true">❆</span></div>
+      <p class="xmas-timer-label" id="xcLabel">Offer ends in</p>
+      <div class="xmas-countdown" aria-hidden="true">
+        <div><b id="xcDays">00</b><span>Days</span></div>
+        <div><b id="xcHours">00</b><span>Hrs</span></div>
+        <div><b id="xcMins">00</b><span>Min</span></div>
+        <div><b id="xcSecs">00</b><span>Sec</span></div>
+      </div>
+      <a class="btn btn-gold xmas-cta" href="#booking" id="xmasClaim">▣ Claim Your 15% — Book Now</a>
+      <p class="xmas-fine">Mention code <b>XMAS26</b> when booking · Mon–Sat, 8:00 am – 6:00 pm</p>
+    </div>
+  </div>
+</div>
+<button class="xmas-gift" id="xmasGift" type="button" aria-label="Open Christmas promo" hidden>🎁</button>
+
+<script>
+(function () {
+  const overlay = document.getElementById('xmasOverlay');
+  const gift = document.getElementById('xmasGift');
+  if (!overlay) return;
+
+  /* Promo window */
+  const START = new Date(2026, 11, 1).getTime();               // 1 Dec 2026
+  const END   = new Date(2026, 11, 22, 23, 59, 59).getTime();  // 22 Dec 2026
+  if (Date.now() > END) { overlay.remove(); if (gift) gift.remove(); return; } // promo over → never show
+
+  /* Dismissal memory (2-day cooldown, only for the ✕ button) */
+  const KEY = 'clz-xmas-dismissed', COOLDOWN = 2 * 864e5;
+  let recentlyDismissed = false;
+  try { recentlyDismissed = Date.now() - Number(localStorage.getItem(KEY) || 0) < COOLDOWN; } catch (e) {}
+  const remember = () => { try { localStorage.setItem(KEY, Date.now()); } catch (e) {} };
+
+  const closeBtn = document.getElementById('xmasClose');
+  const dEl = document.getElementById('xcDays'), hEl = document.getElementById('xcHours'),
+        mEl = document.getElementById('xcMins'), sEl = document.getElementById('xcSecs'),
+        lbl = document.getElementById('xcLabel');
+  const timer = { id: null };
+
+  const closeCard = () => {
+    if (timer.id) { clearInterval(timer.id); timer.id = null; }
+    overlay.classList.remove('is-open');
+    overlay.hidden = true;
+    document.body.classList.remove('xmas-lock');
+  };
+
+  function startCountdown() {
+    if (timer.id) return;
+    const tick = () => {
+      const now = Date.now();
+      let diff = (now < START ? START : END) - now;
+      if (diff <= 0) {
+        if (now < END) { diff = END - now; }
+        else { closeCard(); return; }   // promo finished while open
+      }
+      lbl.textContent = now < START ? 'Promo starts in' : 'Offer ends in';
+      dEl.textContent = String(Math.floor(diff / 864e5)).padStart(2, '0');
+      hEl.textContent = String(Math.floor(diff / 36e5) % 24).padStart(2, '0');
+      mEl.textContent = String(Math.floor(diff / 6e4) % 60).padStart(2, '0');
+      sEl.textContent = String(Math.floor(diff / 1e3) % 60).padStart(2, '0');
+    };
+    tick();
+    timer.id = setInterval(tick, 1000);
+  }
+
+  const openCard = () => {
+    overlay.hidden = false;
+    overlay.classList.add('is-open');
+    document.body.classList.add('xmas-lock');
+    if (gift) gift.hidden = false;
+    startCountdown();
+    closeBtn.focus();
+  };
+
+  /* Gentle snow (skipped for reduced-motion users) */
+  const snowBox = document.getElementById('xmasSnow');
+  if (snowBox && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (let i = 0; i < 26; i++) {
+      const f = document.createElement('i'), s = (Math.random() * 2.6 + 1.5).toFixed(1);
+      f.style.cssText = 'left:' + (Math.random() * 100).toFixed(1) + '%;width:' + s + 'px;height:' + s +
+        'px;opacity:' + (Math.random() * .45 + .3).toFixed(2) +
+        ';--d:' + (Math.random() * 6 + 5).toFixed(1) + 's' +
+        ';--delay:' + (-Math.random() * 10).toFixed(1) + 's' +
+        ';--sway:' + Math.round(Math.random() * 36 - 18) + 'px';
+      snowBox.appendChild(f);
+    }
+  }
+
+  /* Events */
+  closeBtn.addEventListener('click', () => { remember(); closeCard(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeCard(); }); // accidental tap → returns next visit
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) closeCard(); });
+  if (gift) gift.addEventListener('click', openCard);
+
+  document.getElementById('xmasClaim').addEventListener('click', () => {
+    const msg = document.querySelector('#bookingForm [name="message"]');
+    if (msg && !msg.value.trim()) msg.value = 'Christmas Promo — 15% OFF (code XMAS26). I would like to book.';
+    closeCard(); // the anchor then scrolls to #booking as usual
+  });
+
+  /* Auto-open ~2.6s after the page settles (after your preloader) */
+  if (!recentlyDismissed) setTimeout(openCard, 2600);
+  else if (gift) gift.hidden = false; // seen recently → just show the quiet gift chip
+})();
+</script>
+<!-- ============ END CHRISTMAS PROMO CARD ============ -->
 </body>
 </html>
